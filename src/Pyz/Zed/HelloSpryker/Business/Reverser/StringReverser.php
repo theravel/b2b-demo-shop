@@ -7,9 +7,16 @@ use Pyz\Zed\StringReverser\Business\StringReverserFacadeInterface;
 
 class StringReverser implements StringReverserInterface
 {
+    /**
+     * @var StringReverserFacadeInterface
+     */
+    private $reverserFacade;
+
     public function __construct(
-        private StringReverserFacadeInterface $reverserFacade,
-    ) {}
+        StringReverserFacadeInterface $reverserFacade
+    ) {
+        $this->reverserFacade = $reverserFacade;
+    }
 
     /**
      * @param string $stringToReverse

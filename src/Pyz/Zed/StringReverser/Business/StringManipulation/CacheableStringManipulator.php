@@ -7,10 +7,23 @@ use Pyz\Zed\StringReverser\Persistence\StringReverserRepositoryInterface;
 
 class CacheableStringManipulator
 {
+    /**
+     * @var StringReverserEntityManagerInterface
+     */
+    private $entityManager;
+
+    /**
+     * @var StringReverserRepositoryInterface
+     */
+    private $repository;
+
     public function __construct(
-        private StringReverserEntityManagerInterface $entityManager,
-        private StringReverserRepositoryInterface $repository,
-    ) {}
+        StringReverserEntityManagerInterface $entityManager,
+        StringReverserRepositoryInterface $repository
+    ) {
+        $this->entityManager = $entityManager;
+        $this->repository = $repository;
+    }
 
     public function reverse(string $originalString): string
     {
