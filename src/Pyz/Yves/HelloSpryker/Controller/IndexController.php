@@ -19,7 +19,7 @@ class IndexController extends AbstractController
     public function indexAction(Request $request)
     {
         $helloSprykerTransfer = new HelloSprykerTransfer();
-        $helloSprykerTransfer->setOriginalString("Hello Spryker!");
+        $helloSprykerTransfer->setOriginalString($request->get('query') ?? 'Hello Spryker!');
 
         $helloSprykerTransfer = $this->getClient()->reverseString($helloSprykerTransfer);
 

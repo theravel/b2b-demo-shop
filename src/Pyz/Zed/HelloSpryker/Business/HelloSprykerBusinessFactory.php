@@ -8,6 +8,8 @@ use Pyz\Zed\HelloSpryker\Business\Reverser\StringReverser;
 use Pyz\Zed\HelloSpryker\Business\Reverser\StringReverserInterface;
 use Pyz\Zed\HelloSpryker\Business\Writer\StringWriter;
 use Pyz\Zed\HelloSpryker\Business\Writer\StringWriterInterface;
+use Pyz\Zed\HelloSpryker\HelloSprykerDependencyProvider;
+use Pyz\Zed\StringReverser\Business\StringReverserFacadeInterface;
 use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 
 class HelloSprykerBusinessFactory extends AbstractBusinessFactory
@@ -17,22 +19,6 @@ class HelloSprykerBusinessFactory extends AbstractBusinessFactory
      */
     public function createStringReverser(): StringReverserInterface
     {
-        return new StringReverser();
-    }
-
-    /**
-     * @return \Pyz\Zed\HelloSpryker\Business\Reader\StringReaderInterface
-     */
-    public function createStringReader(): StringReaderInterface
-    {
-        return new StringReader($this->getRepository());
-    }
-
-    /**
-     * @return \Pyz\Zed\HelloSpryker\Business\Writer\StringWriterInterface
-     */
-    public function createStringWriter(): StringWriterInterface
-    {
-        return new StringWriter($this->getEntityManager());
+        return new StringReverser($this->getProvidedDependency(HelloSprykerDependencyProvider::FACADE_STRING_REVERSER));
     }
 }
