@@ -13,6 +13,7 @@ use Pyz\Zed\StringReverser\Persistence\StringReverserRepositoryInterface;
  * @group StringReverser
  * @group Business
  * @group CacheableStringManipulatorUnitTest
+ * @group LearningTask
  */
 class CacheableStringManipulatorUnitTest extends Unit
 {
