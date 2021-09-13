@@ -276,6 +276,8 @@ class ConsoleDependencyProvider extends SprykerConsoleDependencyProvider
             new DataImportConsole(DataImportConsole::DEFAULT_NAME . static::COMMAND_SEPARATOR . PaymentDataImportConfig::IMPORT_TYPE_PAYMENT_METHOD_STORE),
             new DataImportConsole(DataImportConsole::DEFAULT_NAME . static::COMMAND_SEPARATOR . ContentNavigationDataImportConfig::IMPORT_TYPE_CONTENT_NAVIGATION),
 
+            new DataImportConsole(DataImportConsole::DEFAULT_NAME . ':' . DataImportConfig::IMPORT_TYPE_ANTELOPE),
+
             // Publish and Synchronization
             new EventBehaviorTriggerTimeoutConsole(),
             new PublisherTriggerEventsConsole(),
