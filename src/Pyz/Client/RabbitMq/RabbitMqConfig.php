@@ -7,6 +7,7 @@
 
 namespace Pyz\Client\RabbitMq;
 
+use Pyz\Zed\AntelopeSearch\Shared\AntelopeSearchConfig;
 use Spryker\Client\RabbitMq\RabbitMqConfig as SprykerRabbitMqConfig;
 use Spryker\Shared\AvailabilityStorage\AvailabilityStorageConfig;
 use Spryker\Shared\AvailabilityStorage\AvailabilityStorageConstants;
@@ -127,6 +128,7 @@ class RabbitMqConfig extends SprykerRabbitMqConfig
             TaxProductStorageConfig::PRODUCT_ABSTRACT_TAX_SET_SYNC_STORAGE_QUEUE,
             TaxStorageConfig::TAX_SET_SYNC_STORAGE_QUEUE,
             SalesReturnSearchConfig::SYNC_SEARCH_RETURN,
+            AntelopeSearchConfig::QUEUE_ANTELOPE_SYNC,
         ];
     }
 

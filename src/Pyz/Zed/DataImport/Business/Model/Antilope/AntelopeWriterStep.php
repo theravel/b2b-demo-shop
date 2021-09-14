@@ -3,6 +3,7 @@
 namespace Pyz\Zed\DataImport\Business\Model\Antilope;
 
 use Orm\Zed\Antelope\Persistence\PyzAntelopeQuery;
+use Pyz\Zed\Antelope\Dependency\AntelopeEvents;
 use Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface;
 use Spryker\Zed\DataImport\Business\Model\DataImportStep\PublishAwareStep;
 use Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface;
@@ -30,5 +31,7 @@ class AntelopeWriterStep extends PublishAwareStep implements DataImportStepInter
         if ($antelopeEntity->isNew() || $antelopeEntity->isModified()) {
             $antelopeEntity->save();
         }
+
+        $this->addPublishEvents(AntelopeEvents::ENTITY_PYZ_ANTELOPE_CREATE, $antelopeEntity->getIdAntelope());
     }
 }
