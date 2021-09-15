@@ -1,0 +1,17 @@
+{% extends template('page-layout-main') %}
+
+{% define data = {
+    antelope: _view.result,
+    query: _view.query,
+} %}
+
+{% block content %}
+    {% if data.antelope %}
+        <div>
+            <div>Name: {{ data.antelope.name }}</div>
+            <div>Color: {{ data.antelope.color }}</div>
+        </div>
+    {% else %}
+        Antelope with name "<span>{{ data.query.name }}</span>" was not found
+    {% endif %}
+{% endblock %}
