@@ -1,0 +1,37 @@
+{% extends template('page-layout-checkout', 'CheckoutPage') %}
+
+{% define data = {
+    backUrl: _view.previousStepUrl,
+    forms: {
+        voucher: _view.voucherForm
+    },
+
+    title: 'Voucher' | trans
+} %}
+
+{% block content %}
+    {% embed molecule('form') with {
+        class: 'box',
+        data: {
+            form: data.forms.voucher,
+            options: {
+                attr: {
+                    id: 'voucher-form'
+                }
+            },
+            submit: {
+                enable: true,
+                text: 'Apply Voucher' | trans
+            },
+            cancel: {
+                enable: true,
+                url: data.backUrl,
+                text: 'general.back.button' | trans
+            }
+        }
+    } only %}
+        {% block fields %}
+
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
