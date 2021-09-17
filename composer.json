@@ -193,6 +193,7 @@
         "spryker/shipments-rest-api": "^1.4.0",
         "spryker/shopping-list-product-option-connector": "^1.4.1",
         "spryker/shopping-lists-rest-api": "^1.0.3",
+        "spryker/silex": "^2.2",
         "spryker/stores-rest-api": "^1.0.4",
         "spryker/tax-product-connector": "^4.3.1",
         "spryker/up-selling-products-rest-api": "^1.2.2",

@@ -8,6 +8,7 @@
 namespace Pyz\Yves\CheckoutPage;
 
 use Pyz\Yves\CheckoutPage\Form\FormFactory;
+use Pyz\Yves\CheckoutPage\Process\StepFactory;
 use SprykerShop\Yves\CheckoutPage\CheckoutPageFactory as SprykerCheckoutPageFactory;
 
 class CheckoutPageFactory extends SprykerCheckoutPageFactory
@@ -18,5 +19,10 @@ class CheckoutPageFactory extends SprykerCheckoutPageFactory
     public function createCheckoutFormFactory(): FormFactory
     {
         return new FormFactory();
+    }
+
+    public function createStepFactory()
+    {
+        return new StepFactory();
     }
 }
